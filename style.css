@@ -22,9 +22,10 @@ a {
 }
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1.5rem;
+    margin: auto;
 }
 .hamburger {
     display: none;
@@ -46,11 +47,11 @@ a {
 }
 .nav-menu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 .nav-item {
-    margin-left: 5rem;
+    margin-right: 5rem;
 }
 .nav-link{
     font-size: 16px;
@@ -103,13 +104,20 @@ a {
 
 /* Media Queries for Mobile */
 @media only screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 1.5rem;
+        margin: auto;
+    }
     .nav-menu {
         position: fixed;
-        left: -120%;
+        left: -100%;
         top: 20rem;
         flex-direction: column;
         background-color: #fff;
-        width: 100%;
+        width: 80%;
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
@@ -126,6 +134,8 @@ a {
     }
 
     .hamburger {
+        display: flex;
+        justify-content: start;
         display: block;
         cursor: pointer;
     }
