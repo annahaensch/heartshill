@@ -6,46 +6,50 @@
     <title>Heart's Hill - Home</title>
     <link rel="shortcut icon" type="image/icon" href="images/hhirs_icon.ico" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="script.js" async></script>
 </head>
 
 <body>
-	<div class="navbar">
+	<nav class="navbar">
         <img src="images/Hearts_Hill_Logo.png" alt="Logo">
-        <a href="#home">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">About 
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#link1">Mission Statement</a>
-                <a href="#link2">Directors & Staff</a>
-                <a href="#link3">Visiting Researchers</a>
-                <a href="#link4">News</a>
-            </div>
+        <ul class="nav-menu">
+	        <li class="nav-item">
+	        	<a class="nav-link" href="#home">Home</a>
+	        </li>
+	        <li class="nav-item">
+		        <div class="dropdown">
+		            <button class="dropbtn">About 
+		                <i class="fa fa-caret-down"></i>
+		            </button>
+		            <div class="dropdown-content">
+		                <a href="#link1">Mission Statement</a>
+		                <a href="#link2">Directors & Staff</a>
+		                <a href="#link3">Planning Your Visit</a>
+		            </div>
+		        </div>
+		    </li>
+		    <li class="nav-item">
+		         <div class="dropdown">
+		            <button class="dropbtn">Programs 
+		                <i class="fa fa-caret-down"></i>
+		            </button>
+		            <div class="dropdown-content">
+		                <a href="#link5">Summer@HHIRS</a>
+		                <a href="#link6">HHIRS Seminar</a>
+		                <a href="#link7">Pig Roast</a>
+		            </div>
+		        </div> 
+		    </li>
+		    <li class="nav-item">
+	        	<a href="#store" class="nav-link">Store</a>
+	    	</li>
+	    </ul>
+	    <div class="hamburger">
+	        <span class="bar"></span>
+	        <span class="bar"></span>
+	        <span class="bar"></span>
         </div>
-         <div class="dropdown">
-            <button class="dropbtn">Programs 
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#link5">Summer@HHIRS</a>
-                <a href="#link6">HHIRS Seminar</a>
-                <a href="#link7">Pig Roast</a>
-            </div>
-        </div> 
-        <div class="dropdown">
-            <button class="dropbtn">Planning Your Visit
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#link8">Getting Here</a>
-                <a href="#link9">Parking</a>
-                <a href="#link10">Lodging</a>
-                <a href="#link11">Things to Do</a>
-            </div>
-        </div> 
-        <a href="#store">Store</a>
-    </div>
+    </nav>
 </body>
 </html>
 

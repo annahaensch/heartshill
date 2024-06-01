@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,11 +14,29 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
 .navbar {
-    overflow: hidden;
-    align-items: center;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.hamburger {
+    display: none;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
 }
 .navbar img {
     float: left;
@@ -21,13 +44,21 @@ body {
     height: 200px;
     padding: 0px;
 }
-.navbar a {
-    float: left;
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-item {
+    margin-left: 5rem;
+}
+.nav-link{
     font-size: 16px;
     color: black;
-    text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+}
+.nav-link:hover{
+    color: #black;
 }
 .dropdown {
     float: left;
@@ -48,6 +79,7 @@ body {
 }
 .dropdown-content {
     display: none;
+    font-size: 16px;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -70,37 +102,42 @@ body {
 }
 
 /* Media Queries for Mobile */
-@media screen and (max-width: 768px) {
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('images/hillside_mobile.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow: hidden;
-}
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 20rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
 
-.navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-}
-.navbar a, .dropdown .dropbtn {
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-}
-.navbar img {
-    margin-bottom: 10px;
-}
-.dropdown-content {
-    position: static;
-    width: 100%;
-}
-.dropdown-content a {
-    padding: 10px;
-}
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
