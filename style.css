@@ -63,6 +63,26 @@ h3{
     text-align: left;
     text-indent: 40px;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+th {
+  text-align: left;
+  padding: 8px;
+  width: 20%;
+}
+
+td {
+  width: 100%;
+  word-wrap: break-word;
+  padding: 10px;
+}
+img.thumbnails
+{
+   width:100%;
+}
 .content {
   background: white;
   padding: 15px;
