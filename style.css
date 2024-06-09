@@ -25,6 +25,9 @@ li {
 a {
     text-decoration: none;
 }
+a.in-text {
+    text-decoration: underline;
+}
 a:link {
     color: black;
     text-decoration: underline;
@@ -91,6 +94,11 @@ img.thumbnails
 {
    width:50%;
    max-width: 400px;
+}
+img.map
+{
+   width:90%;
+   max-width: 600px;
 }
 .content {
   background: white;
