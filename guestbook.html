@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart's Hill - Home</title>
+    <link rel="shortcut icon" type="image/icon" href="images/hhirs_icon.ico" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="script.js" async></script>
+</head>
+
+<body>
+	<nav class="navbar">
+        <img src="images/Hearts_Hill_Logo.png" alt="Logo">
+        <ul class="nav-menu">
+	        <li class="nav-item">
+	        	<a class="nav-link" href="index.html">Home</a>
+	        </li>
+	        <li class="nav-item">
+		        <div class="dropdown">
+		            <button class="dropbtn">About 
+		                <i class="fa fa-caret-down"></i>
+		            </button>
+		            <div class="dropdown-content">
+		                <a href="mission.html">Mission Statement</a>
+		                <a href="staff.html">Directors & Staff</a>
+		                <a href="visit.html">Planning Your Visit</a>
+		            </div>
+		        </div>
+		    </li>
+		    <li class="nav-item">
+		         <div class="dropdown">
+		            <button class="dropbtn">Programs 
+		                <i class="fa fa-caret-down"></i>
+		            </button>
+		            <div class="dropdown-content">
+		                <a href="summer.html">Summer@HHIRS</a>
+		                <a href="seminar.html">HHIRS Seminar</a>
+		                <a href="pigroast.html">Pig Roast</a>
+		            </div>
+		        </div> 
+		    </li>
+		    <li class="nav-item">
+	        	<a href="store.html" class="nav-link">Store</a>
+	    	</li>
+	    </ul>
+	    <div class="hamburger">
+	        <span class="bar"></span>
+	        <span class="bar"></span>
+	        <span class="bar"></span>
+        </div>
+    </nav>
+
+<body>
+    <h1>Heart's Hill Guest Log</h1>
+    <div class = "content">
+    <form id="myForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments"></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting in the traditional way
+            
+            var name = document.getElementById('name').value;
+            var comments = document.getElementById('comments').value;
+            
+            var formData = new FormData();
+            formData.append('entry.230521076', name); // Replace with your "Name" entry ID
+            formData.append('entry.1518907445', comments); // Replace with your "Comments" entry ID
+            
+            fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSeY9NDpEFUqDOtdPcNFGh57MVRAXUm6CbY87woe5tLdT-V0eg/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).then(function(response) {
+                alert('Message Logged!');
+			    location.reload(true);
+            }).catch(function(error) {
+                console.error('Error!', error.message);
+            });
+        });
+    </script>
+
+    <p>
+   <iframe src="https://docs.google.com/spreadsheets/d/1e-TIpbKLFjjAMSKYT4ezDmll_q1hKQV4qeROccruTTw/pubhtml?gid=2014237918&amp;single=true&amp;widget=true&amp;headers=false" width = "100%" height = "1000px"></iframe>
+	</p>
+
+	</div>
+</body>
+</html>
+
+
